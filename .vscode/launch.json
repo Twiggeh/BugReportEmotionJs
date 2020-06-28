@@ -1,0 +1,73 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NEW DEBUGGER Launch Chrome",
+      "sourceMaps": true,
+      "outFiles": ["./client/public/js/*.js", "!**/node_modules/**"],
+      "request": "launch",
+      "type": "pwa-chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/client",
+      "postDebugTask": "kill webpack"
+    },
+    {
+      "name": "NEW DEBUGGER Launch Backend",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/backend",
+      "restart": true,
+      "console": "integratedTerminal",
+      "runtimeExecutable": "/home/twiggeh/.yarn/bin/nodemon",
+      "runtimeArgs": ["--inspect"],
+      "program": "${workspaceFolder}/backend/app.js",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "NEW DEBUG",
+      "preLaunchTask": "start webpack",
+      "configurations": ["NEW DEBUGGER Launch Chrome"]
+    }
+  ]
+}
+
+// {
+//   "type": "node",
+//   "request": "attach",
+//   "name": "attach to backend",
+//   "address": "localhost",
+//   "restart": true,
+//   "sourceMaps": false,
+//   "outFiles": [],
+//   "protocol": "inspector",
+//   //"processId": "${command:PickProcess}",
+//   "localRoot": "${workspaceFolder}/backend",
+//   "remoteRoot": "${workspaceFolder}/backend"
+// },
+// {
+//   "type": "node",
+//   "name": "start_webpack_dev_server",
+//   "request": "launch",
+//   "runtimeExecutable": "${workspaceFolder}/client/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+//   "runtimeArgs": [
+//     "--config ./webpack.config.js",
+//     "--inspect",
+//     "--mode development"
+//   ],
+//   "cwd": "${workspaceFolder}/client",
+//   "console": "integratedTerminal",
+//   "internalConsoleOptions": "neverOpen"
+// },
+// {
+//   "name": "attach to client",
+//   "type": "chrome",
+//   "runtimeExecutable": "/usr/bin/google-chrome-stable",
+//   "request": "launch",
+//   "url": "http://localhost:8080",
+//   "webRoot": "${workspaceFolder}/client"
+// }

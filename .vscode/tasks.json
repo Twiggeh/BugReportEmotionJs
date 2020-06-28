@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "start webpack",
+      "command": "nohup ./startWebpack.sh &> /dev/null",
+      "options": {
+        "cwd": "${workspaceFolder}/bin"
+      },
+      "presentation": {
+        "reveal": "never"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "OLD start webpack",
+      "command": "cd bin && ./startWebpack.sh &"
+    },
+    {
+      "type": "shell",
+      "label": "kill webpack",
+      //"command": "echo \"Broken Extension can't run properly\""
+      "command": "killall startWebpack.sh"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+client/node_modules
+backend/node_modules
+keys.json
+trash
+.directory
+webpack.config copy.js
+yarn-error.log
+bin/nohup.out

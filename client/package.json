@@ -1,12 +1,8 @@
 {
-  "name": "CardsAgainstHumanity_Client",
-  "version": "0.0.0",
-  "description": "Cards against Humanity Client",
   "main": "app.js",
   "author": "Twiggeh",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./",
     "debug": "webpack-dev-server --config ./webpack.config.js --mode development --host 0.0.0.0",
     "build": "webpack --config ./webpack.config.js --mode production",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development --open"
